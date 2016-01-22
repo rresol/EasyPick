@@ -6,14 +6,22 @@ __email__  = 'shashank.kumar.apc13@itbhu.ac.in'
 
 import json
 import urllib2
-
+import googlecustomsearch
 
 #Integrating Both API's
 def search(query):
 	response = ''
 	coursera_response = coursera(query)
 	udacity_response  = udacity(query)
+	book_search1      = googlecustomsearch.Search(query)
+	book_results	  = googlecustomsearch.book_search()
+	research_results  = googlecustomsearch.research_paper_search()
+	
 	response += 'The available courses on coursera are:\n ' +coursera_response+ ' \nThe available courses on udacity are: \n' + udacity_response
+	Extras    = '\n\n\n' + book_results + '\n\n\n' + research_results
+
+	response  += Extras
+
 	print response
 	return response
 
