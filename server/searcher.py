@@ -1,4 +1,5 @@
 __author__ = 'rresol'
+__email__  = 'shashank.kumar.apc13@itbhu.ac.in'
 
 
 #To search for the related courses on udacity and coursera and returning the response
